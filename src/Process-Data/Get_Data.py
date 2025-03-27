@@ -1,8 +1,6 @@
 import os
-import random
 import sqlite3
 import sys
-import time
 from datetime import datetime, timedelta
 
 import toml
@@ -33,7 +31,6 @@ for key, value in config['get-data'].items():
         raw_data = get_json_data(
             url.format(date_pointer.month, date_pointer.day, value['start_year'], date_pointer.year, key))
         df = to_data_frame(raw_data)
-
         df['Date'] = str(date_pointer)
 
         df.to_sql(table_name, con, if_exists="replace")
