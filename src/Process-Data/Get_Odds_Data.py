@@ -68,7 +68,6 @@ for key, value in config['get-odds-data'].items():
                 print(f"No {sportsbook} odds data found for game: {game}")
 
         date_pointer = date_pointer + timedelta(days=1)
-        time.sleep(random.randint(1, 3))
 
     df = pd.DataFrame(df_data, )
     df.to_sql(key, con, if_exists="replace")
