@@ -97,5 +97,5 @@ for field in frame.columns.values:
         continue
     frame[field] = frame[field].astype(float)
 con = sqlite3.connect("../../Data/dataset.sqlite")
-frame.to_sql("dataset_2012-24_new", con, if_exists="replace")
+frame.to_sql("dataset_2012-25", con, if_exists="replace")
 con.close()
